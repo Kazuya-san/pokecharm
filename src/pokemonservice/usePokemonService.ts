@@ -15,7 +15,7 @@ interface Pokemon {
   moves: string[];
 }
 
-const usePokemonService = (searchTerm: string = POKEMON) => {
+const usePokemonService = (searchTerm = POKEMON) => {
   const [pokemon, setPokemon] = useState<Pokemon>({} as Pokemon);
   const [loading, setLoading] = useState(true);
 
@@ -55,10 +55,7 @@ const usePokemonService = (searchTerm: string = POKEMON) => {
 
       const pokemon: Pokemon = {
         name: data.name,
-        image:
-          searchTerm === "charmander"
-            ? "https://naramsim.github.io/Colosseum/images/pokemons/4.svg"
-            : data.sprites.front_default,
+        image: data.sprites.front_default,
         hp: data.stats[0].base_stat,
         type: data.types
           .map((type: { type: { name: string } }) => type.type.name)

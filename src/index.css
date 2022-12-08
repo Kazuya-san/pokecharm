@@ -17,7 +17,7 @@ h3{
 
 .mainContainer{
   background: linear-gradient(45deg, #e16d86 30%, #f3ac86 90%);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,5 +94,9 @@ h3{
 @media screen and (max-width: 600px) {
   .main {
     flex-direction: column;
+  }
+
+  .pokemonCard{
+    margin-top: 40px;
   }
 }
